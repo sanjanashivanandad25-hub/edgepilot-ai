@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EdgePilot optional per-tier metrics supplied by Person 3",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "on_device": {"$ref": "#/$defs/tier"},
+    "far_edge": {"$ref": "#/$defs/tier"},
+    "regional_edge": {"$ref": "#/$defs/tier"},
+    "cloud": {"$ref": "#/$defs/tier"}
+  },
+  "$defs": {
+    "latency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "source", "source_reference", "method", "scope"],
+      "properties": {
+        "value": {"type": "number", "exclusiveMinimum": 0},
+        "source": {"enum": ["measured", "quoted", "estimated", "demo"]},
+        "source_reference": {"type": "string", "minLength": 1},
+        "method": {"type": "string", "minLength": 1},
+        "scope": {"const": "end_to_end"},
+        "assumptions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "latency_components_ms": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "number", "minimum": 0}}
+      }
+    },
+    "cost": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "source", "source_reference", "method", "scope"],
+      "properties": {
+        "value": {"type": "number", "minimum": 0},
+        "source": {"enum": ["measured", "quoted", "estimated", "demo"]},
+        "source_reference": {"type": "string", "minLength": 1},
+        "method": {"type": "string", "minLength": 1},
+        "scope": {"const": "cost"},
+        "assumptions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "cost_components_inr": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "number", "minimum": 0}}
+      }
+    },
+    "tier": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "latency_ms": {"$ref": "#/$defs/latency"},
+        "monthly_cost_inr": {"$ref": "#/$defs/cost"},
+        "source": {"enum": ["measured", "quoted", "estimated", "demo"]},
+        "source_note": {"type": "string"}
+      }
+    }
+  },
+  "description": "This documents Stage 3's preferred NESTED latency+cost input. The Python engine additionally accepts legacy flat Stage 2 inputs and optional legacy policy fields. Python performs cross-field component sum and source/assumptions validation."
+}

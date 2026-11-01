@@ -1,0 +1,189 @@
+{
+  "recommended_tier": "on_device",
+  "scores": {
+    "on_device": 83.0,
+    "far_edge": 73.1,
+    "regional_edge": 69.7,
+    "cloud": 56.9
+  },
+  "estimates": {
+    "latency_ms": null,
+    "monthly_cost": null,
+    "currency": "INR"
+  },
+  "explanation": "On-device is the provisional choice (83/100 heuristic suitability) for the supplied latency target, privacy, data-transfer demand and criticality. Far edge ranks next (73.1/100). Confirm hardware compatibility, network latency and costs before deployment.",
+  "tradeoffs": [
+    "Local hardware capacity and thermal/power limits may restrict which models run.",
+    "Model updates, monitoring and scaling across devices require additional operations."
+  ],
+  "warnings": [
+    "DEMO HEURISTICS: scores are not calibrated hardware benchmarks or probabilities.",
+    "No supported end-to-end latency measurement for the recommended tier; latency shown as null.",
+    "No supported monthly cost estimate for the recommended tier; cost shown as null.",
+    "On-device memory feasibility is unverified: model RAM and device available RAM not both provided.",
+    "Tier-level measurements/quotes not supplied; rankings rely on generic qualitative profiles."
+  ],
+  "assumptions": [
+    "'bandwidth_requirement' means data-transfer demand (low/medium/high), not measured network speed.",
+    "Tier profiles are illustrative ordinal assumptions, not Qualcomm hardware benchmark results.",
+    "Far edge is modeled as access-network compute; regional edge is a more distant regional data center.",
+    "High criticality increases resilience priority but does not guarantee uptime or failover.",
+    "Low positive bandwidth by itself does not prove an edge/cloud option infeasible; supply minimum_network_bandwidth_mbps for a hard threshold.",
+    "Only confirmed constraints eliminate options; missing hardware/network information remains unknown."
+  ],
+  "architecture": {
+    "nodes": [
+      {
+        "id": "device",
+        "label": "User Device",
+        "type": "device"
+      },
+      {
+        "id": "inference",
+        "label": "On-device Inference",
+        "type": "device"
+      }
+    ],
+    "connections": [
+      {
+        "source": "device",
+        "target": "inference"
+      }
+    ]
+  },
+  "details": {
+    "status": "provisional",
+    "ranking": [
+      "on_device",
+      "far_edge",
+      "regional_edge",
+      "cloud"
+    ],
+    "feasibility": {
+      "on_device": {
+        "eligible": true,
+        "reasons": []
+      },
+      "far_edge": {
+        "eligible": true,
+        "reasons": []
+      },
+      "regional_edge": {
+        "eligible": true,
+        "reasons": []
+      },
+      "cloud": {
+        "eligible": true,
+        "reasons": []
+      }
+    },
+    "score_breakdown": {
+      "on_device": {
+        "latency": {
+          "value": 96,
+          "weight": 5
+        },
+        "privacy": {
+          "value": 97,
+          "weight": 5
+        },
+        "data_locality": {
+          "value": 95,
+          "weight": 2
+        },
+        "resilience": {
+          "value": 80,
+          "weight": 4
+        },
+        "scalability": {
+          "value": 35,
+          "weight": 1
+        },
+        "affordability": {
+          "value": 50.0,
+          "weight": 3
+        }
+      },
+      "far_edge": {
+        "latency": {
+          "value": 86,
+          "weight": 5
+        },
+        "privacy": {
+          "value": 72,
+          "weight": 5
+        },
+        "data_locality": {
+          "value": 78,
+          "weight": 2
+        },
+        "resilience": {
+          "value": 75,
+          "weight": 4
+        },
+        "scalability": {
+          "value": 66,
+          "weight": 1
+        },
+        "affordability": {
+          "value": 50.0,
+          "weight": 3
+        }
+      },
+      "regional_edge": {
+        "latency": {
+          "value": 74,
+          "weight": 5
+        },
+        "privacy": {
+          "value": 65,
+          "weight": 5
+        },
+        "data_locality": {
+          "value": 62,
+          "weight": 2
+        },
+        "resilience": {
+          "value": 85,
+          "weight": 4
+        },
+        "scalability": {
+          "value": 85,
+          "weight": 1
+        },
+        "affordability": {
+          "value": 50.0,
+          "weight": 3
+        }
+      },
+      "cloud": {
+        "latency": {
+          "value": 52,
+          "weight": 5
+        },
+        "privacy": {
+          "value": 48,
+          "weight": 5
+        },
+        "data_locality": {
+          "value": 35,
+          "weight": 2
+        },
+        "resilience": {
+          "value": 80,
+          "weight": 4
+        },
+        "scalability": {
+          "value": 98,
+          "weight": 1
+        },
+        "affordability": {
+          "value": 50.0,
+          "weight": 3
+        }
+      }
+    },
+    "metric_sources": {},
+    "method": "transparent_weighted_heuristic_v1"
+  }
+}

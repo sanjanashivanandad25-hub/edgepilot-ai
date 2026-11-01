@@ -1,0 +1,62 @@
+{
+  "baseline_tier": "on_device",
+  "target_tier": null,
+  "method": "sampled_one_factor_at_a_time_v1",
+  "evaluations": 4,
+  "candidate_flips_found": 1,
+  "counts": {
+    "flips": 1,
+    "same": 3,
+    "error": 0
+  },
+  "flips": [
+    {
+      "field": "device_available_ram_mb",
+      "from": 1024,
+      "to": 128.0,
+      "from_tier": "on_device",
+      "to_tier": "far_edge",
+      "score_deltas": {
+        "on_device": {
+          "before": 83.0,
+          "after": 0.0,
+          "delta": -83.0
+        },
+        "far_edge": {
+          "before": 73.1,
+          "after": 73.1,
+          "delta": 0.0
+        },
+        "regional_edge": {
+          "before": 69.7,
+          "after": 69.7,
+          "delta": 0.0
+        },
+        "cloud": {
+          "before": 56.9,
+          "after": 56.9,
+          "delta": 0.0
+        }
+      },
+      "feasibility_changes": {
+        "on_device": {
+          "was_eligible": true,
+          "now_eligible": false,
+          "before_reasons": [],
+          "after_reasons": [
+            "Model requires 256 MB RAM but device has 128 MB available."
+          ]
+        }
+      },
+      "metrics_mode": "baseline_metrics_invalidated",
+      "description": "Recalculation changed the leading tier from on device to far edge. Changed input(s): device_available_ram_mb. The set of feasible tiers and/or their exclusions changed. Previous latency/cost figures were withheld because they may be stale. Rankings remain provisional; this is a hypothetical scenario, not a deployment action."
+    }
+  ],
+  "truncated": false,
+  "limitations": [
+    "Discrete hypothetical samples, not an exhaustive search or exact switching thresholds.",
+    "A one-field change can be insufficient even when a two-field combination could change the winner.",
+    "Workload changes may invalidate old cost and end-to-end latency evidence; resupply fresh scenario metrics for numerical comparisons.",
+    "Suitability scores use the current uncalibrated engine and are not deployment guarantees."
+  ]
+}

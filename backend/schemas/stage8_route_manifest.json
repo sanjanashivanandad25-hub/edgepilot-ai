@@ -1,0 +1,29 @@
+{
+  "title": "Stage 8 optional route-specific controls",
+  "description": "Route inputs are the public workload object plus the following extra controls. The backend MUST remove controls before calling TeamEngine.",
+  "routes": {
+    "POST /api/recommend": {
+      "extras": []
+    },
+    "POST /api/explain": {
+      "extras": [
+        "question",
+        "alternative_tier"
+      ]
+    },
+    "POST /api/simulate": {
+      "extras": [
+        "changes"
+      ]
+    },
+    "POST /api/optimize": {
+      "extras": []
+    },
+    "POST /api/counterfactuals": {
+      "extras": [
+        "fields",
+        "target_tier"
+      ]
+    }
+  }
+}

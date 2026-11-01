@@ -1,0 +1,15 @@
+{
+  "workload": {
+    "latency_requirement_ms": 50,
+    "bandwidth_requirement": "medium",
+    "budget_monthly": 1000,
+    "privacy_requirement": "high",
+    "criticality": "high",
+    "concurrent_users": 250,
+    "model_ram_required_mb": 2048,
+    "device_available_ram_mb": 1024,
+    "bandwidth_available_mbps": 10,
+    "require_offline": false,
+    "allow_remote_processing": true
+  }
+}

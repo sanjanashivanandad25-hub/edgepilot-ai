@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EdgePilot response v1 with optional explainability extras",
+  "type": "object",
+  "required": ["recommended_tier", "scores", "estimates", "explanation", "tradeoffs", "warnings", "assumptions", "architecture"],
+  "properties": {
+    "recommended_tier": {"type": ["string", "null"], "enum": ["on_device", "far_edge", "regional_edge", "cloud", null]},
+    "scores": {"type": "object", "required": ["on_device", "far_edge", "regional_edge", "cloud"], "properties": {
+      "on_device": {"type": "number", "minimum": 0, "maximum": 100},
+      "far_edge": {"type": "number", "minimum": 0, "maximum": 100},
+      "regional_edge": {"type": "number", "minimum": 0, "maximum": 100},
+      "cloud": {"type": "number", "minimum": 0, "maximum": 100}
+    }},
+    "estimates": {"type": "object", "required": ["latency_ms", "monthly_cost", "currency"], "properties": {
+      "latency_ms": {"type": ["number", "null"], "minimum": 0},
+      "monthly_cost": {"type": ["number", "null"], "minimum": 0},
+      "currency": {"const": "INR"}
+    }},
+    "explanation": {"type": "string"},
+    "tradeoffs": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "architecture": {"type": "object", "required": ["nodes", "connections"], "properties": {
+      "nodes": {"type": "array", "items": {"type": "object", "required": ["id", "label", "type"]}},
+      "connections": {"type": "array", "items": {"type": "object", "required": ["source", "target"]}}
+    }},
+    "details": {"type": "object"}
+  },
+  "additionalProperties": true
+}

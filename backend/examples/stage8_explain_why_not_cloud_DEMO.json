@@ -1,0 +1,637 @@
+{
+  "recommended_tier": "on_device",
+  "scores": {
+    "on_device": 83.0,
+    "far_edge": 73.1,
+    "regional_edge": 69.7,
+    "cloud": 56.9
+  },
+  "estimates": {
+    "latency_ms": null,
+    "monthly_cost": null,
+    "currency": "INR"
+  },
+  "explanation": "On-device is the provisional choice (83/100 heuristic suitability) for the supplied latency target, privacy, data-transfer demand and criticality. Far edge ranks next (73.1/100). Confirm hardware compatibility, network latency and costs before deployment.",
+  "tradeoffs": [
+    "Local hardware capacity and thermal/power limits may restrict which models run.",
+    "Model updates, monitoring and scaling across devices require additional operations."
+  ],
+  "warnings": [
+    "DEMO HEURISTICS: scores are uncalibrated suitability indices, not probabilities or measured deployment rankings.",
+    "No supported end-to-end latency measurement for the recommended tier; latency shown as null.",
+    "No supported monthly cost estimate for the recommended tier; cost shown as null.",
+    "On-device memory feasibility is unverified: model RAM and device available RAM not both provided.",
+    "Some tier costs are unknown; their affordability uses a neutral scoring placeholder, not a verified cost estimate.",
+    "Recommended tier is not fully verified; see details.evidence_gaps for missing checks.",
+    "Matched Qualcomm benchmark measures only model inference; it was NOT used as total latency or to change tier ranking."
+  ],
+  "assumptions": [
+    "'bandwidth_requirement' means data-transfer demand (low/medium/high), not measured network speed.",
+    "Tier profiles are illustrative ordinal assumptions, not Qualcomm hardware benchmark results.",
+    "Far edge is modeled as access-network compute; regional edge is a more distant regional data center.",
+    "High criticality increases resilience priority but does not guarantee uptime or failover.",
+    "Low positive bandwidth by itself does not prove an edge/cloud option infeasible; supply minimum_network_bandwidth_mbps for a hard threshold.",
+    "Only confirmed constraints eliminate options; missing hardware/network information remains unknown.",
+    "A neutral affordability prior of 50 is used where a tier's cost is unknown; this is not a price observation."
+  ],
+  "architecture": {
+    "nodes": [
+      {
+        "id": "device",
+        "label": "User Device",
+        "type": "device"
+      },
+      {
+        "id": "inference",
+        "label": "On-device Inference",
+        "type": "device"
+      }
+    ],
+    "connections": [
+      {
+        "source": "device",
+        "target": "inference"
+      }
+    ]
+  },
+  "details": {
+    "status": "provisional",
+    "ranking": [
+      "on_device",
+      "far_edge",
+      "regional_edge",
+      "cloud"
+    ],
+    "feasibility": {
+      "on_device": {
+        "eligible": true,
+        "reasons": [],
+        "verification": "partial"
+      },
+      "far_edge": {
+        "eligible": true,
+        "reasons": [],
+        "verification": "partial"
+      },
+      "regional_edge": {
+        "eligible": true,
+        "reasons": [],
+        "verification": "partial"
+      },
+      "cloud": {
+        "eligible": true,
+        "reasons": [],
+        "verification": "partial"
+      }
+    },
+    "evidence_gaps": {
+      "on_device": [
+        "On-device memory fit not verified.",
+        "Model compatibility on device not verified.",
+        "End-to-end latency deadline not verified by measurement.",
+        "Monthly cost not independently measured or quoted."
+      ],
+      "far_edge": [
+        "Available network bandwidth not measured.",
+        "End-to-end latency deadline not verified by measurement.",
+        "Monthly cost not independently measured or quoted."
+      ],
+      "regional_edge": [
+        "Available network bandwidth not measured.",
+        "End-to-end latency deadline not verified by measurement.",
+        "Monthly cost not independently measured or quoted."
+      ],
+      "cloud": [
+        "Available network bandwidth not measured.",
+        "End-to-end latency deadline not verified by measurement.",
+        "Monthly cost not independently measured or quoted."
+      ]
+    },
+    "score_breakdown": {
+      "on_device": {
+        "latency": {
+          "value": 96,
+          "weight": 5,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 24.0
+        },
+        "privacy": {
+          "value": 97,
+          "weight": 5,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 24.25
+        },
+        "data_locality": {
+          "value": 95,
+          "weight": 2,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 9.5
+        },
+        "resilience": {
+          "value": 80,
+          "weight": 4,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 16.0
+        },
+        "scalability": {
+          "value": 35,
+          "weight": 1,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 1.75
+        },
+        "affordability": {
+          "value": 50.0,
+          "weight": 3,
+          "origin": "unknown_neutral_prior",
+          "weighted_contribution": 7.5
+        }
+      },
+      "far_edge": {
+        "latency": {
+          "value": 86,
+          "weight": 5,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 21.5
+        },
+        "privacy": {
+          "value": 72,
+          "weight": 5,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 18.0
+        },
+        "data_locality": {
+          "value": 78,
+          "weight": 2,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 7.8
+        },
+        "resilience": {
+          "value": 75,
+          "weight": 4,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 15.0
+        },
+        "scalability": {
+          "value": 66,
+          "weight": 1,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 3.3
+        },
+        "affordability": {
+          "value": 50.0,
+          "weight": 3,
+          "origin": "unknown_neutral_prior",
+          "weighted_contribution": 7.5
+        }
+      },
+      "regional_edge": {
+        "latency": {
+          "value": 74,
+          "weight": 5,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 18.5
+        },
+        "privacy": {
+          "value": 65,
+          "weight": 5,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 16.25
+        },
+        "data_locality": {
+          "value": 62,
+          "weight": 2,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 6.2
+        },
+        "resilience": {
+          "value": 85,
+          "weight": 4,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 17.0
+        },
+        "scalability": {
+          "value": 85,
+          "weight": 1,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 4.25
+        },
+        "affordability": {
+          "value": 50.0,
+          "weight": 3,
+          "origin": "unknown_neutral_prior",
+          "weighted_contribution": 7.5
+        }
+      },
+      "cloud": {
+        "latency": {
+          "value": 52,
+          "weight": 5,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 13.0
+        },
+        "privacy": {
+          "value": 48,
+          "weight": 5,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 12.0
+        },
+        "data_locality": {
+          "value": 35,
+          "weight": 2,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 3.5
+        },
+        "resilience": {
+          "value": 80,
+          "weight": 4,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 16.0
+        },
+        "scalability": {
+          "value": 98,
+          "weight": 1,
+          "origin": "heuristic_profile",
+          "weighted_contribution": 4.9
+        },
+        "affordability": {
+          "value": 50.0,
+          "weight": 3,
+          "origin": "unknown_neutral_prior",
+          "weighted_contribution": 7.5
+        }
+      }
+    },
+    "weights": {
+      "latency": 5,
+      "privacy": 5,
+      "data_locality": 2,
+      "resilience": 4,
+      "scalability": 1,
+      "affordability": 3
+    },
+    "decision_drivers": [
+      {
+        "factor": "privacy",
+        "advantage_points": 6.25,
+        "winner_origin": "heuristic_profile",
+        "runner_up_origin": "heuristic_profile"
+      },
+      {
+        "factor": "latency",
+        "advantage_points": 2.5,
+        "winner_origin": "heuristic_profile",
+        "runner_up_origin": "heuristic_profile"
+      },
+      {
+        "factor": "data_locality",
+        "advantage_points": 1.7,
+        "winner_origin": "heuristic_profile",
+        "runner_up_origin": "heuristic_profile"
+      },
+      {
+        "factor": "resilience",
+        "advantage_points": 1.0,
+        "winner_origin": "heuristic_profile",
+        "runner_up_origin": "heuristic_profile"
+      },
+      {
+        "factor": "affordability",
+        "advantage_points": 0.0,
+        "winner_origin": "unknown_neutral_prior",
+        "runner_up_origin": "unknown_neutral_prior"
+      },
+      {
+        "factor": "scalability",
+        "advantage_points": -1.55,
+        "winner_origin": "heuristic_profile",
+        "runner_up_origin": "heuristic_profile"
+      }
+    ],
+    "metric_sources": {
+      "on_device": "measured"
+    },
+    "metric_provenance": {
+      "on_device": {
+        "inference_latency_ms": {
+          "source": "measured",
+          "source_reference": "qualcomm_workbench: https://workbench.aihub.qualcomm.com/jobs/jp8r0e0xg/",
+          "method": "legacy_flat_metric",
+          "assumptions": [],
+          "scope": "model_inference_only"
+        }
+      }
+    },
+    "tier_estimates": {
+      "on_device": {
+        "latency_ms": null,
+        "latency_source": null,
+        "latency_target_met": null,
+        "latency_target_verified": false,
+        "latency_headroom_ms": null,
+        "monthly_cost_inr": null,
+        "cost_source": null,
+        "budget_met": null,
+        "budget_verified": false,
+        "budget_headroom_inr": null,
+        "cost_to_budget_percent": null
+      },
+      "far_edge": {
+        "latency_ms": null,
+        "latency_source": null,
+        "latency_target_met": null,
+        "latency_target_verified": false,
+        "latency_headroom_ms": null,
+        "monthly_cost_inr": null,
+        "cost_source": null,
+        "budget_met": null,
+        "budget_verified": false,
+        "budget_headroom_inr": null,
+        "cost_to_budget_percent": null
+      },
+      "regional_edge": {
+        "latency_ms": null,
+        "latency_source": null,
+        "latency_target_met": null,
+        "latency_target_verified": false,
+        "latency_headroom_ms": null,
+        "monthly_cost_inr": null,
+        "cost_source": null,
+        "budget_met": null,
+        "budget_verified": false,
+        "budget_headroom_inr": null,
+        "cost_to_budget_percent": null
+      },
+      "cloud": {
+        "latency_ms": null,
+        "latency_source": null,
+        "latency_target_met": null,
+        "latency_target_verified": false,
+        "latency_headroom_ms": null,
+        "monthly_cost_inr": null,
+        "cost_source": null,
+        "budget_met": null,
+        "budget_verified": false,
+        "budget_headroom_inr": null,
+        "cost_to_budget_percent": null
+      }
+    },
+    "explanation_source": "deterministic",
+    "method": "transparent_weighted_heuristic_v2",
+    "benchmark": {
+      "status": "matched",
+      "model": "mobilenet_v2",
+      "device": "Samsung Galaxy S25 (Family)",
+      "runtime": "tflite",
+      "precision": "float",
+      "inference_latency_ms": 0.45,
+      "source_type": "qualcomm_workbench",
+      "source_reference": "https://workbench.aihub.qualcomm.com/jobs/jp8r0e0xg/",
+      "retrieved_or_measured_on": "2026-10-24",
+      "measurement_scope": "on_device_model_inference_only_not_end_to_end",
+      "evidence_file": "mobilenet_v2_s25_workbench_evidence.json",
+      "note": "Model inference only, not end-to-end latency or proof of deployment feasibility."
+    },
+    "benchmark_used_to_score_tier": false,
+    "explainability": {
+      "question": "why_not_tier",
+      "alternative_tier": "cloud",
+      "answer": "Cloud remains eligible, but ranks below On-device by 26.1 uncalibrated suitability points. Cloud: end-to-end latency unknown; monthly cost unknown.",
+      "answer_source": "deterministic",
+      "deterministic_answer": "Cloud remains eligible, but ranks below On-device by 26.1 uncalibrated suitability points. Cloud: end-to-end latency unknown; monthly cost unknown.",
+      "comparisons": {
+        "on_device": {
+          "eligible": true,
+          "score": 83.0,
+          "status": "selected",
+          "reasons": [],
+          "score_gap_to_winner": 0.0,
+          "latency": {
+            "latency_ms": null,
+            "latency_source": null,
+            "latency_target_met": null,
+            "latency_target_verified": false,
+            "latency_headroom_ms": null,
+            "monthly_cost_inr": null,
+            "cost_source": null,
+            "budget_met": null,
+            "budget_verified": false,
+            "budget_headroom_inr": null,
+            "cost_to_budget_percent": null
+          },
+          "factor_sources": {
+            "latency": "heuristic_profile",
+            "privacy": "heuristic_profile",
+            "data_locality": "heuristic_profile",
+            "resilience": "heuristic_profile",
+            "scalability": "heuristic_profile",
+            "affordability": "unknown_neutral_prior"
+          }
+        },
+        "far_edge": {
+          "eligible": true,
+          "score": 73.1,
+          "status": "eligible",
+          "reasons": [],
+          "score_gap_to_winner": 9.9,
+          "latency": {
+            "latency_ms": null,
+            "latency_source": null,
+            "latency_target_met": null,
+            "latency_target_verified": false,
+            "latency_headroom_ms": null,
+            "monthly_cost_inr": null,
+            "cost_source": null,
+            "budget_met": null,
+            "budget_verified": false,
+            "budget_headroom_inr": null,
+            "cost_to_budget_percent": null
+          },
+          "factor_sources": {
+            "latency": "heuristic_profile",
+            "privacy": "heuristic_profile",
+            "data_locality": "heuristic_profile",
+            "resilience": "heuristic_profile",
+            "scalability": "heuristic_profile",
+            "affordability": "unknown_neutral_prior"
+          }
+        },
+        "regional_edge": {
+          "eligible": true,
+          "score": 69.7,
+          "status": "eligible",
+          "reasons": [],
+          "score_gap_to_winner": 13.3,
+          "latency": {
+            "latency_ms": null,
+            "latency_source": null,
+            "latency_target_met": null,
+            "latency_target_verified": false,
+            "latency_headroom_ms": null,
+            "monthly_cost_inr": null,
+            "cost_source": null,
+            "budget_met": null,
+            "budget_verified": false,
+            "budget_headroom_inr": null,
+            "cost_to_budget_percent": null
+          },
+          "factor_sources": {
+            "latency": "heuristic_profile",
+            "privacy": "heuristic_profile",
+            "data_locality": "heuristic_profile",
+            "resilience": "heuristic_profile",
+            "scalability": "heuristic_profile",
+            "affordability": "unknown_neutral_prior"
+          }
+        },
+        "cloud": {
+          "eligible": true,
+          "score": 56.9,
+          "status": "eligible",
+          "reasons": [],
+          "score_gap_to_winner": 26.1,
+          "latency": {
+            "latency_ms": null,
+            "latency_source": null,
+            "latency_target_met": null,
+            "latency_target_verified": false,
+            "latency_headroom_ms": null,
+            "monthly_cost_inr": null,
+            "cost_source": null,
+            "budget_met": null,
+            "budget_verified": false,
+            "budget_headroom_inr": null,
+            "cost_to_budget_percent": null
+          },
+          "factor_sources": {
+            "latency": "heuristic_profile",
+            "privacy": "heuristic_profile",
+            "data_locality": "heuristic_profile",
+            "resilience": "heuristic_profile",
+            "scalability": "heuristic_profile",
+            "affordability": "unknown_neutral_prior"
+          }
+        }
+      },
+      "decision_drivers": [
+        {
+          "factor": "privacy",
+          "advantage_points": 6.25,
+          "winner_origin": "heuristic_profile",
+          "runner_up_origin": "heuristic_profile"
+        },
+        {
+          "factor": "latency",
+          "advantage_points": 2.5,
+          "winner_origin": "heuristic_profile",
+          "runner_up_origin": "heuristic_profile"
+        },
+        {
+          "factor": "data_locality",
+          "advantage_points": 1.7,
+          "winner_origin": "heuristic_profile",
+          "runner_up_origin": "heuristic_profile"
+        },
+        {
+          "factor": "resilience",
+          "advantage_points": 1.0,
+          "winner_origin": "heuristic_profile",
+          "runner_up_origin": "heuristic_profile"
+        },
+        {
+          "factor": "affordability",
+          "advantage_points": 0.0,
+          "winner_origin": "unknown_neutral_prior",
+          "runner_up_origin": "unknown_neutral_prior"
+        },
+        {
+          "factor": "scalability",
+          "advantage_points": -1.55,
+          "winner_origin": "heuristic_profile",
+          "runner_up_origin": "heuristic_profile"
+        }
+      ],
+      "evidence": {
+        "benchmark": {
+          "status": "matched",
+          "model": "mobilenet_v2",
+          "device": "Samsung Galaxy S25 (Family)",
+          "runtime": "tflite",
+          "precision": "float",
+          "inference_latency_ms": 0.45,
+          "source_type": "qualcomm_workbench",
+          "source_reference": "https://workbench.aihub.qualcomm.com/jobs/jp8r0e0xg/",
+          "retrieved_or_measured_on": "2026-10-24",
+          "measurement_scope": "on_device_model_inference_only_not_end_to_end",
+          "evidence_file": "mobilenet_v2_s25_workbench_evidence.json",
+          "note": "Model inference only, not end-to-end latency or proof of deployment feasibility."
+        },
+        "metric_provenance": {
+          "on_device": {
+            "inference_latency_ms": {
+              "source": "measured",
+              "source_reference": "qualcomm_workbench: https://workbench.aihub.qualcomm.com/jobs/jp8r0e0xg/",
+              "method": "legacy_flat_metric",
+              "assumptions": [],
+              "scope": "model_inference_only"
+            }
+          }
+        }
+      },
+      "guardrail_note": "LLM can reword the explanation but cannot modify ranking or metrics. Format and numeric-claim guards are not independent factual verification.",
+      "next_step": null
+    },
+    "optimization": {
+      "method": "stage6_multiobjective_v1",
+      "pareto": {
+        "status": "insufficient_comparable_data",
+        "non_dominated_tiers": [],
+        "dominated_by": {},
+        "compared_tiers": {},
+        "excluded_or_missing": {
+          "on_device": "Requires supported end-to-end latency and monthly cost for the same workload",
+          "far_edge": "Requires supported end-to-end latency and monthly cost for the same workload",
+          "regional_edge": "Requires supported end-to-end latency and monthly cost for the same workload",
+          "cloud": "Requires supported end-to-end latency and monthly cost for the same workload"
+        },
+        "all_eligible_tiers_compared": false,
+        "contains_estimates": false,
+        "contains_demo_inputs": false,
+        "note": "Pareto dominance compares eligible tiers on the supplied E2E latency and monthly cost only; estimated or demo figures are hypothetical and do not imply verified real-world performance."
+      },
+      "hybrid": {
+        "status": "not_proposed",
+        "reasons": [
+          "Explicit allow_remote_processing=true is required to propose a hybrid split",
+          "Local model memory requirement and available device memory must be provided"
+        ],
+        "nodes": [],
+        "connections": [],
+        "note": "Hybrid is optional and separate from the required four-tier ranking."
+      },
+      "cost_break_even": {
+        "status": "not_available",
+        "reason": "No workload-matched, sourced cost curves from Person 3"
+      }
+    },
+    "reliability": {
+      "status": "pass_with_caveats",
+      "errors": [],
+      "warnings": [
+        "Hardware benchmark is model-inference-only, not application E2E latency",
+        "Tier rankings are provisional heuristics, not confidence probabilities",
+        "Winning tier has unverified requirements; display evidence gaps"
+      ],
+      "check_categories": [
+        "public_input",
+        "ranking_feasibility",
+        "tier_metrics_provenance",
+        "architecture",
+        "benchmark_identity_scope",
+        "optimization_policy",
+        "uncertainty"
+      ],
+      "method": "edgepilot_stage7_invariant_audit_v1",
+      "audit_scope": "Decision consistency, schema, provenance and policy invariants only"
+    }
+  }
+}

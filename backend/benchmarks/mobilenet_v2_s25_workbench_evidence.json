@@ -1,0 +1,11 @@
+{
+  "model": "mobilenet_v2",
+  "device": "Samsung Galaxy S25 (Family)",
+  "runtime": "tflite",
+  "precision": "float",
+  "inference_latency_ms": 0.45,
+  "source_type": "qualcomm_workbench",
+  "source_reference": "https://workbench.aihub.qualcomm.com/jobs/jp8r0e0xg/",
+  "retrieved_or_measured_on": "2026-10-24",
+  "measurement_scope": "on_device_model_inference_only_not_end_to_end"
+}

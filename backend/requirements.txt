@@ -1,0 +1,2 @@
+# The decision engine and OpenAI-compatible REST adapter use Python standard library only.
+# Optional: pip install python-imagine-sdk (if switching to Qualcomm's official Python SDK)

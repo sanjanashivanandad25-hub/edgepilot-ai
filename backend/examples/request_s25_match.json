@@ -1,0 +1,14 @@
+{
+  "workload": {
+    "latency_requirement_ms": 50,
+    "bandwidth_requirement": "medium",
+    "budget_monthly": 1000,
+    "privacy_requirement": "high",
+    "criticality": "high",
+    "application_type": "smart_camera",
+    "model_name": "mobilenet_v2",
+    "target_device": "Samsung Galaxy S25 (Family)",
+    "runtime": "tflite",
+    "precision": "float"
+  }
+}

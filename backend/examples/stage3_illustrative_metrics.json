@@ -1,0 +1,82 @@
+{
+  "on_device": {
+    "latency_ms": {
+      "value": 13.45,
+      "source": "estimated",
+      "source_reference": "DEMO MODEL — replace with application measurements",
+      "method": "sum_of_processing_components",
+      "scope": "end_to_end",
+      "assumptions": ["Preprocessing and postprocessing are hypothetical example timings", "0.45 ms inference is a MobileNetV2 S25 profile, not an entire-app latency measurement"],
+      "latency_components_ms": {"preprocessing": 8, "inference": 0.45, "postprocessing": 5}
+    },
+    "monthly_cost_inr": {
+      "value": 400,
+      "source": "estimated",
+      "source_reference": "DEMO COST — Person 3 must replace with actual cost model",
+      "method": "monthly_component_sum",
+      "scope": "cost",
+      "assumptions": ["Illustrative Indian rupee amounts for demonstration only"],
+      "cost_components_inr": {"device_amortization": 100, "energy": 100, "operations": 200}
+    }
+  },
+  "far_edge": {
+    "latency_ms": {
+      "value": 39,
+      "source": "estimated",
+      "source_reference": "DEMO NETWORK MODEL — not a measurement",
+      "method": "sum_of_processing_and_network_components",
+      "scope": "end_to_end",
+      "assumptions": ["Illustrative RTT and transfer durations; not verified infrastructure values"],
+      "latency_components_ms": {"preprocessing": 5, "upload": 12, "network_rtt": 8, "queue": 3, "inference": 5, "postprocessing": 2, "download": 4}
+    },
+    "monthly_cost_inr": {
+      "value": 650,
+      "source": "estimated",
+      "source_reference": "DEMO COST — Person 3 must replace",
+      "method": "monthly_component_sum",
+      "scope": "cost",
+      "assumptions": ["Illustrative pricing, not a quote"],
+      "cost_components_inr": {"compute": 300, "network": 150, "operations": 200}
+    }
+  },
+  "regional_edge": {
+    "latency_ms": {
+      "value": 56,
+      "source": "estimated",
+      "source_reference": "DEMO NETWORK MODEL — not a measurement",
+      "method": "sum_of_processing_and_network_components",
+      "scope": "end_to_end",
+      "assumptions": ["Illustrative transfer and processing durations"],
+      "latency_components_ms": {"preprocessing": 5, "upload": 15, "network_rtt": 20, "queue": 4, "inference": 5, "postprocessing": 2, "download": 5}
+    },
+    "monthly_cost_inr": {
+      "value": 900,
+      "source": "estimated",
+      "source_reference": "DEMO COST — Person 3 must replace",
+      "method": "monthly_component_sum",
+      "scope": "cost",
+      "assumptions": ["Illustrative monthly amounts"],
+      "cost_components_inr": {"compute": 500, "network": 150, "operations": 250}
+    }
+  },
+  "cloud": {
+    "latency_ms": {
+      "value": 112,
+      "source": "estimated",
+      "source_reference": "DEMO NETWORK MODEL — not a measurement",
+      "method": "sum_of_processing_and_network_components",
+      "scope": "end_to_end",
+      "assumptions": ["Illustrative upload, queue, RTT, and return path durations"],
+      "latency_components_ms": {"preprocessing": 5, "upload": 22, "network_rtt": 60, "queue": 8, "inference": 7, "postprocessing": 2, "download": 8}
+    },
+    "monthly_cost_inr": {
+      "value": 1200,
+      "source": "estimated",
+      "source_reference": "DEMO COST — Person 3 must replace",
+      "method": "monthly_component_sum",
+      "scope": "cost",
+      "assumptions": ["Illustrative, not a public cloud provider price quote"],
+      "cost_components_inr": {"compute": 750, "network": 250, "operations": 200}
+    }
+  }
+}

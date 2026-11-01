@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EdgePilot request v1 (optional fields allowed)",
+  "type": "object",
+  "required": ["workload"],
+  "properties": {
+    "workload": {
+      "type": "object",
+      "required": ["latency_requirement_ms", "bandwidth_requirement", "budget_monthly", "privacy_requirement", "criticality"],
+      "properties": {
+        "latency_requirement_ms": {"type": "number", "exclusiveMinimum": 0},
+        "bandwidth_requirement": {"enum": ["low", "medium", "high"]},
+        "budget_monthly": {"type": "number", "minimum": 0},
+        "privacy_requirement": {"enum": ["low", "medium", "high"]},
+        "criticality": {"enum": ["low", "medium", "high"]},
+        "model_ram_required_mb": {"type": "number", "exclusiveMinimum": 0},
+        "device_available_ram_mb": {"type": "number", "exclusiveMinimum": 0},
+        "concurrent_users": {"type": "number", "minimum": 0},
+        "require_offline": {"type": "boolean"},
+        "allow_remote_processing": {"type": "boolean"},
+        "network_available": {"type": "boolean"},
+        "bandwidth_available_mbps": {"type": "number", "minimum": 0},
+        "minimum_network_bandwidth_mbps": {"type": "number", "exclusiveMinimum": 0},
+        "allowed_tiers": {"type": "array", "items": {"enum": ["on_device", "far_edge", "regional_edge", "cloud"]}, "minItems": 1, "uniqueItems": true}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

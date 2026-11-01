@@ -1,0 +1,270 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EdgePilot Stage 6 workload-matched linear monthly cost curves",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scenario_id",
+    "workload_match",
+    "tiers",
+    "reference_monthly_requests"
+  ],
+  "properties": {
+    "scenario_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "workload_match": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": false,
+      "properties": {
+        "application_type": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "model_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "target_device": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "runtime": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        "precision": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        }
+      }
+    },
+    "reference_monthly_requests": {
+      "type": "number",
+      "minimum": 0
+    },
+    "tiers": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": false,
+      "properties": {
+        "on_device": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "fixed_monthly_inr",
+            "per_1000_requests_inr",
+            "source",
+            "source_reference",
+            "assumptions",
+            "min_monthly_requests",
+            "max_monthly_requests"
+          ],
+          "properties": {
+            "fixed_monthly_inr": {
+              "type": "number",
+              "minimum": 0
+            },
+            "per_1000_requests_inr": {
+              "type": "number",
+              "minimum": 0
+            },
+            "source": {
+              "enum": [
+                "measured",
+                "quoted",
+                "estimated"
+              ]
+            },
+            "source_reference": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            },
+            "assumptions": {
+              "type": "array",
+              "maxItems": 15,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 240
+              }
+            },
+            "min_monthly_requests": {
+              "type": "number",
+              "minimum": 0
+            },
+            "max_monthly_requests": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          }
+        },
+        "far_edge": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "fixed_monthly_inr",
+            "per_1000_requests_inr",
+            "source",
+            "source_reference",
+            "assumptions",
+            "min_monthly_requests",
+            "max_monthly_requests"
+          ],
+          "properties": {
+            "fixed_monthly_inr": {
+              "type": "number",
+              "minimum": 0
+            },
+            "per_1000_requests_inr": {
+              "type": "number",
+              "minimum": 0
+            },
+            "source": {
+              "enum": [
+                "measured",
+                "quoted",
+                "estimated"
+              ]
+            },
+            "source_reference": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            },
+            "assumptions": {
+              "type": "array",
+              "maxItems": 15,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 240
+              }
+            },
+            "min_monthly_requests": {
+              "type": "number",
+              "minimum": 0
+            },
+            "max_monthly_requests": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          }
+        },
+        "regional_edge": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "fixed_monthly_inr",
+            "per_1000_requests_inr",
+            "source",
+            "source_reference",
+            "assumptions",
+            "min_monthly_requests",
+            "max_monthly_requests"
+          ],
+          "properties": {
+            "fixed_monthly_inr": {
+              "type": "number",
+              "minimum": 0
+            },
+            "per_1000_requests_inr": {
+              "type": "number",
+              "minimum": 0
+            },
+            "source": {
+              "enum": [
+                "measured",
+                "quoted",
+                "estimated"
+              ]
+            },
+            "source_reference": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            },
+            "assumptions": {
+              "type": "array",
+              "maxItems": 15,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 240
+              }
+            },
+            "min_monthly_requests": {
+              "type": "number",
+              "minimum": 0
+            },
+            "max_monthly_requests": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          }
+        },
+        "cloud": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "fixed_monthly_inr",
+            "per_1000_requests_inr",
+            "source",
+            "source_reference",
+            "assumptions",
+            "min_monthly_requests",
+            "max_monthly_requests"
+          ],
+          "properties": {
+            "fixed_monthly_inr": {
+              "type": "number",
+              "minimum": 0
+            },
+            "per_1000_requests_inr": {
+              "type": "number",
+              "minimum": 0
+            },
+            "source": {
+              "enum": [
+                "measured",
+                "quoted",
+                "estimated"
+              ]
+            },
+            "source_reference": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            },
+            "assumptions": {
+              "type": "array",
+              "maxItems": 15,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 240
+              }
+            },
+            "min_monthly_requests": {
+              "type": "number",
+              "minimum": 0
+            },
+            "max_monthly_requests": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          }
+        }
+      }
+    }
+  }
+}

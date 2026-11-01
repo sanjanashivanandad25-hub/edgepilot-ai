@@ -1,0 +1,10 @@
+{
+  "workload": {
+    "latency_requirement_ms": 50,
+    "bandwidth_requirement": "medium",
+    "budget_monthly": 1000,
+    "privacy_requirement": "high",
+    "criticality": "high",
+    "latency_requirment_ms": 1
+  }
+}

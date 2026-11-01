@@ -1,0 +1,6 @@
+{
+  "on_device": {"latency_ms": 17, "monthly_cost_inr": 110, "source": "demo", "source_note": "SYNTHETIC DEMO DATA - ignored by engine"},
+  "far_edge": {"latency_ms": 28, "monthly_cost_inr": 420, "source": "demo", "source_note": "SYNTHETIC DEMO DATA - ignored by engine"},
+  "regional_edge": {"latency_ms": 44, "monthly_cost_inr": 800, "source": "demo", "source_note": "SYNTHETIC DEMO DATA - ignored by engine"},
+  "cloud": {"latency_ms": 120, "monthly_cost_inr": 1240, "source": "demo", "source_note": "SYNTHETIC DEMO DATA - ignored by engine"}
+}

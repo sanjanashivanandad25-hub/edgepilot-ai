@@ -1,0 +1,46 @@
+{
+  "on_device": {
+    "latency_ms": {
+      "value": 13.45,
+      "source": "estimated",
+      "source_reference": "SYNTHETIC STAGE 5 NETWORK EXAMPLE - NOT A MEASUREMENT",
+      "method": "scenario_specific_component_sum",
+      "scope": "end_to_end",
+      "assumptions": ["Illustrative processing times; a bandwidth change is assumed not to affect local inference."],
+      "latency_components_ms": {"preprocessing": 8, "inference": 0.45, "postprocessing": 5}
+    }
+  },
+  "far_edge": {
+    "latency_ms": {
+      "value": 170,
+      "source": "estimated",
+      "source_reference": "SYNTHETIC STAGE 5 NETWORK EXAMPLE - NOT A MEASUREMENT",
+      "method": "scenario_specific_component_sum",
+      "scope": "end_to_end",
+      "assumptions": ["Illustrative upload delay increases when network bandwidth falls."],
+      "latency_components_ms": {"preprocessing": 5, "upload": 135, "network_rtt": 15, "queue": 4, "inference": 5, "postprocessing": 2, "download": 4}
+    }
+  },
+  "regional_edge": {
+    "latency_ms": {
+      "value": 220,
+      "source": "estimated",
+      "source_reference": "SYNTHETIC STAGE 5 NETWORK EXAMPLE - NOT A MEASUREMENT",
+      "method": "scenario_specific_component_sum",
+      "scope": "end_to_end",
+      "assumptions": ["Illustrative transport delay, not a provider latency measurement."],
+      "latency_components_ms": {"preprocessing": 5, "upload": 167, "network_rtt": 30, "queue": 6, "inference": 5, "postprocessing": 2, "download": 5}
+    }
+  },
+  "cloud": {
+    "latency_ms": {
+      "value": 410,
+      "source": "estimated",
+      "source_reference": "SYNTHETIC STAGE 5 NETWORK EXAMPLE - NOT A MEASUREMENT",
+      "method": "scenario_specific_component_sum",
+      "scope": "end_to_end",
+      "assumptions": ["Illustrative remote latency under constrained bandwidth, not a benchmark."],
+      "latency_components_ms": {"preprocessing": 5, "upload": 285, "network_rtt": 70, "queue": 16, "inference": 12, "postprocessing": 2, "download": 20}
+    }
+  }
+}

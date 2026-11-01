@@ -1,0 +1,8 @@
+{
+  "regional_edge": {
+    "source": "estimated",
+    "source_note": "ILLUSTRATION ONLY. REPLACE with tested cost/latency values and provenance before judging real performance.",
+    "latency_ms": 45,
+    "monthly_cost_inr": 800
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "suite": "Stage 7 offline scenario matrix",
+  "uses_real_llm": false,
+  "performance_metrics": "No synthetic E2E values required for these cases",
+  "passed": 10,
+  "total": 10,
+  "scenarios": [
+    {
+      "scenario": "baseline_matching_qualcomm_benchmark",
+      "passed": true,
+      "recommended_tier": "on_device",
+      "audit_status": "pass_with_caveats",
+      "benchmark_status": "matched"
+    },
+    {
+      "scenario": "insufficient_device_ram",
+      "passed": true,
+      "recommended_tier": "far_edge",
+      "audit_status": "pass_with_caveats",
+      "benchmark_status": "matched"
+    },
+    {
+      "scenario": "offline_operation",
+      "passed": true,
+      "recommended_tier": "on_device",
+      "audit_status": "pass_with_caveats",
+      "benchmark_status": "matched"
+    },
+    {
+      "scenario": "network_outage",
+      "passed": true,
+      "recommended_tier": "on_device",
+      "audit_status": "pass_with_caveats",
+      "benchmark_status": "matched"
+    },
+    {
+      "scenario": "no_feasible_tier",
+      "passed": true,
+      "recommended_tier": null,
+      "audit_status": "pass_with_caveats",
+      "benchmark_status": "matched"
+    },
+    {
+      "scenario": "unknown_model_does_not_reuse_benchmark",
+      "passed": true,
+      "recommended_tier": "on_device",
+      "audit_status": "pass_with_caveats",
+      "benchmark_status": "no_match"
+    },
+    {
+      "scenario": "large_scale_low_privacy",
+      "passed": true,
+      "recommended_tier": "regional_edge",
+      "audit_status": "pass_with_caveats",
+      "benchmark_status": "matched"
+    },
+    {
+      "scenario": "hybrid_opt_in",
+      "passed": true,
+      "recommended_tier": "on_device",
+      "audit_status": "pass_with_caveats",
+      "benchmark_status": "matched"
+    },
+    {
+      "scenario": "data_residency_unverified",
+      "passed": true,
+      "recommended_tier": "on_device",
+      "audit_status": "pass_with_caveats",
+      "benchmark_status": "matched"
+    },
+    {
+      "scenario": "real_recomputed_memory_flip",
+      "passed": true,
+      "original_tier": "on_device",
+      "new_tier": "far_edge"
+    }
+  ]
+}

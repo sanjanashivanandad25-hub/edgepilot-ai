@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EdgePilot Stage 8 public workload contract v1.0",
+  "type": "object",
+  "required": [
+    "workload"
+  ],
+  "properties": {
+    "workload": {
+      "type": "object",
+      "required": [
+        "latency_requirement_ms",
+        "bandwidth_requirement",
+        "budget_monthly",
+        "privacy_requirement",
+        "criticality"
+      ],
+      "properties": {
+        "latency_requirement_ms": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "bandwidth_requirement": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "budget_monthly": {
+          "type": "number",
+          "minimum": 0
+        },
+        "privacy_requirement": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "criticality": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "application_type": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "model_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "target_device": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "runtime": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "precision": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "model_ram_required_mb": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "device_available_ram_mb": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "concurrent_users": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "minimum_availability_percent": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 100
+        },
+        "bandwidth_available_mbps": {
+          "type": "number",
+          "minimum": 0
+        },
+        "minimum_network_bandwidth_mbps": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "require_offline": {
+          "type": "boolean"
+        },
+        "allow_remote_processing": {
+          "type": "boolean"
+        },
+        "network_available": {
+          "type": "boolean"
+        },
+        "allowed_tiers": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "on_device",
+              "far_edge",
+              "regional_edge",
+              "cloud"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "allowed_data_regions": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 40,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$comment": "Python validate_external_request is authoritative. This schema is intended for team communication."
+}

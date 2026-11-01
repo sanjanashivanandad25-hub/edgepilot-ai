@@ -1,0 +1,14 @@
+{
+  "workload": {
+    "latency_requirement_ms": 80,
+    "bandwidth_requirement": "medium",
+    "budget_monthly": 1000,
+    "privacy_requirement": "medium",
+    "criticality": "high",
+    "model_ram_required_mb": 4096,
+    "device_available_ram_mb": 2048,
+    "network_available": true,
+    "bandwidth_available_mbps": 20,
+    "minimum_network_bandwidth_mbps": 5
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "scenario_id": "demo-smart-camera-s25-qualcomm-2026-10",
+  "workload_match": {
+    "application_type": "smart_camera",
+    "model_name": "mobilenet_v2",
+    "target_device": "Samsung Galaxy S25 (Family)",
+    "runtime": "tflite",
+    "precision": "float"
+  },
+  "reference_monthly_requests": 2000,
+  "tiers": {
+    "on_device": {
+      "fixed_monthly_inr": 800,
+      "per_1000_requests_inr": 10,
+      "source": "estimated",
+      "source_reference": "DEMO ONLY - Person 3 must supply validated provider/hardware unit economics",
+      "assumptions": [
+        "All costs in INR/month and aligned to the same demo workload",
+        "Linear cost-per-request approximation; no volume discounts or tiered tariffs"
+      ],
+      "min_monthly_requests": 0,
+      "max_monthly_requests": 50000
+    },
+    "far_edge": {
+      "fixed_monthly_inr": 200,
+      "per_1000_requests_inr": 80,
+      "source": "estimated",
+      "source_reference": "DEMO ONLY - Person 3 must supply validated provider/hardware unit economics",
+      "assumptions": [
+        "All costs in INR/month and aligned to the same demo workload",
+        "Linear cost-per-request approximation; no volume discounts or tiered tariffs"
+      ],
+      "min_monthly_requests": 0,
+      "max_monthly_requests": 50000
+    },
+    "regional_edge": {
+      "fixed_monthly_inr": 300,
+      "per_1000_requests_inr": 90,
+      "source": "estimated",
+      "source_reference": "DEMO ONLY - Person 3 must supply validated provider/hardware unit economics",
+      "assumptions": [
+        "All costs in INR/month and aligned to the same demo workload",
+        "Linear cost-per-request approximation; no volume discounts or tiered tariffs"
+      ],
+      "min_monthly_requests": 0,
+      "max_monthly_requests": 50000
+    },
+    "cloud": {
+      "fixed_monthly_inr": 100,
+      "per_1000_requests_inr": 140,
+      "source": "estimated",
+      "source_reference": "DEMO ONLY - Person 3 must supply validated provider/hardware unit economics",
+      "assumptions": [
+        "All costs in INR/month and aligned to the same demo workload",
+        "Linear cost-per-request approximation; no volume discounts or tiered tariffs"
+      ],
+      "min_monthly_requests": 0,
+      "max_monthly_requests": 50000
+    }
+  }
+}

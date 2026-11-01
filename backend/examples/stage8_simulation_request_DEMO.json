@@ -1,0 +1,23 @@
+{
+  "workload": {
+    "latency_requirement_ms": 50,
+    "bandwidth_requirement": "medium",
+    "budget_monthly": 1000,
+    "privacy_requirement": "high",
+    "criticality": "high",
+    "application_type": "smart_camera",
+    "model_name": "mobilenet_v2",
+    "target_device": "Samsung Galaxy S25 (Family)",
+    "runtime": "tflite",
+    "precision": "float",
+    "model_ram_required_mb": 256,
+    "device_available_ram_mb": 1024,
+    "network_available": true,
+    "bandwidth_available_mbps": 20,
+    "minimum_network_bandwidth_mbps": 5,
+    "concurrent_users": 50
+  },
+  "changes": {
+    "device_available_ram_mb": 128
+  }
+}

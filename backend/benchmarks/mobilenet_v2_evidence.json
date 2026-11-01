@@ -1,0 +1,11 @@
+{
+  "model": "mobilenet_v2",
+  "device": "Samsung Galaxy S24",
+  "runtime": "ONNX Runtime",
+  "precision": "w8a8",
+  "inference_latency_ms": 0.33,
+  "source_type": "qualcomm_published",
+  "source_reference": "qai-hub-models perf mobilenet_v2",
+  "retrieved_or_measured_on": "2026-10-24",
+  "measurement_scope": "on_device_model_inference_only_not_end_to_end"
+}

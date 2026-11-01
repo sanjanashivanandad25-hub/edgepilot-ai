@@ -1,0 +1,15 @@
+{
+  "workload": {
+    "latency_requirement_ms": 50,
+    "bandwidth_requirement": "high",
+    "budget_monthly": 1500,
+    "privacy_requirement": "high",
+    "criticality": "high",
+    "allowed_data_regions": ["IN"],
+    "minimum_availability_percent": 99.9,
+    "model_name": "mobilenet_v2",
+    "target_device": "Samsung Galaxy S25 (Family)",
+    "runtime": "tflite",
+    "precision": "float"
+  }
+}
